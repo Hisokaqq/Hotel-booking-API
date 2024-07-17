@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'hotels',
     'bookings',
     'users',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
