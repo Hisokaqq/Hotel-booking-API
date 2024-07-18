@@ -52,8 +52,8 @@ This project is a Django-based REST API for managing hotel bookings, rooms, and 
 
 ## Requirements
 
-- Django==5.1
-- djangorestframework==3.14.0
+- Django==5.1b1
+- djangorestframework==3.15.2
 
 ## Models
 
