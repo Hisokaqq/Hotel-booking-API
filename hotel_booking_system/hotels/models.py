@@ -10,10 +10,14 @@ class Hotel(models.Model):
         return self.name
 
 class Room(models.Model):
+    class Type(models.TextChoices):
+        SIGNLE = 'SINGLE', 'Single'
+        DOUBLE = 'DOUBLE', 'Double'
+
     hotel = models.ForeignKey(Hotel, related_name="rooms", on_delete=models.CASCADE)
     
     number = models.CharField(max_length=50)
-    type = models.CharField(max_length=50)
+    type = models.CharField(max_length=10, choices=Type.choices, default=Type.SIGNLE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
 

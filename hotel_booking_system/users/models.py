@@ -9,9 +9,8 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
-    phone_number = models.CharField(max_length=20)
-    email = models.EmailField()
-    address = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
     type = models.CharField(max_length=10, choices=UserType.choices, default=UserType.GUEST)
 
     def __str__(self):
